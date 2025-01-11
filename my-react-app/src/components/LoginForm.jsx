@@ -1,16 +1,20 @@
 import { useState } from 'react';
-import PropTypes from 'prop-types';  // ← import PropTypes
+import PropTypes from 'prop-types';
 import { TextField, Button, Box } from '@mui/material';
 
 /**
  * A reusable form component to handle user login input (username only).
- * 
+ *
  * Props:
  *  - onSubmit: a callback function invoked when the user submits the form
  *  - loading: boolean indicating if login is in progress
  *  - error: string containing an error message (if any)
  */
-const LoginForm = ({ onSubmit, loading, error }) => {
+function LoginForm({
+  onSubmit = null,   // Default: null if not provided
+  loading = false,   // Default: false if not provided
+  error = ''         // Default: empty string if not provided
+}) {
   // Local state to capture the username
   const [username, setUsername] = useState('');
 
@@ -64,27 +68,15 @@ const LoginForm = ({ onSubmit, loading, error }) => {
       </Button>
     </Box>
   );
-};
+}
 
-/**
- * Prop type validations
- */
 LoginForm.propTypes = {
-  /** Callback function to handle form submission*/
+  /** Callback when the user submits the form */
   onSubmit: PropTypes.func,
-  /** Flag to indicate loading state (disables submit button)*/
+  /** Whether the submit button should be disabled and show "Logging in..." */
   loading: PropTypes.bool,
-  /** Error message to display if login fails or validation fails*/
+  /** Error message to display above the submit button */
   error: PropTypes.string
-};
-
-/**
- * Default props
- */
-LoginForm.defaultProps = {
-  onSubmit: null,
-  loading: false,
-  error: ''
 };
 
 export default LoginForm;
