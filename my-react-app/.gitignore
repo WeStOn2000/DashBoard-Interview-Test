@@ -1,0 +1,18 @@
+# node_modules is where all dependencies are installed
+/node_modules
+
+# pnp files for Yarn Plug'n'Play (if applicable)
+/.pnp
+.pnp.js
+
+# The production build folder
+/build
+
+# OS-specific hidden file
+.DS_Store
+
+# Environment files (local dev)
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
