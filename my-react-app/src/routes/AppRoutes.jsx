@@ -4,9 +4,6 @@ import DashboardPage from '../Pages/DashboardPage';
 
 /**
  * Main routing configuration for the app.
- * Defines two routes:
- *  - '/' (LoginPage)
- *  - '/dashboard' (DashboardPage)
  */
 const AppRoutes = () => {
   return (
